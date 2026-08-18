@@ -1,0 +1,13 @@
+{
+  "name": "freshness-gate",
+  "version": "1.0.0",
+  "description": "Classifies a signal as fresh, stale, or red from its real timestamp",
+  "type": "module",
+  "license": "MIT",
+  "author": "Justin Rhee",
+  "repository": { "type": "git", "url": "https://github.com/justin-rhee/freshness-gate.git" },
+  "engines": { "node": ">=22" },
+  "exports": { ".": "./src/freshness-gate.ts" },
+  "files": ["src", "README.md", "LICENSE", "SECURITY.md"],
+  "scripts": { "test": "bash tests/run.sh" }
+}
