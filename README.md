@@ -38,7 +38,7 @@ There's no build step and nothing to compile. Copy `src/freshness-gate.ts` into 
 - it doesn't collect timestamps, poll anything, or schedule checks of its own
 - it doesn't send alerts or notifications, it only returns a classification
 - it won't flag a future timestamp as suspicious; forward clock skew is trusted as fresh by design, because guessing wrong about skew produces false alarms with no real payoff
-- `overallFreshness` tells you the reporting pipeline as a whole is alive rather than that every source feeding it's current, so one fresh entry among stale ones calls the whole set fresh
+- `overallFreshness` tells you the reporting pipeline as a whole is alive rather than that every source feeding it is current, so one fresh entry among stale ones calls the whole set fresh
 
 ## How I tested it
 
@@ -63,4 +63,4 @@ Design decisions and what changed while building it: [docs/ADR.md](docs/ADR.md).
 
 ---
 
-This little tool is one of a handful I pulled out of my own day-to-day agent setup. I use them all myself, so when something breaks I usually notice fast. But if you spot something weird, or just want to ask how it works, open an issue. I read every one. More tools on my [GitHub profile](https://github.com/justin-rhee).
+This little tool is one of a handful I pulled out of my own day-to-day agent setup. I use them all myself, so when something breaks I usually notice fast. But if you run into any issues, or anything that looks off, open an issue. I read every one. More tools on my [GitHub profile](https://github.com/justin-rhee).
