@@ -1,11 +1,11 @@
 # freshness-gate
 
-[![tests](https://github.com/justin-rhee/freshness-gate/actions/workflows/test.yml/badge.svg)](https://github.com/justin-rhee/freshness-gate/actions/workflows/test.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![node >= 22](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg) ![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)
+[![tests](https://github.com/justin-rhee/freshness-gate/actions/workflows/test.yml/badge.svg)](https://github.com/justin-rhee/freshness-gate/actions/workflows/test.yml) [![npm](https://img.shields.io/npm/v/freshness-gate.svg)](https://www.npmjs.com/package/freshness-gate) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![node >= 22](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg) ![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)
 
 Tells a health check whether a job actually ran recently, and treats a job that never reported as dead.
 
 ```ts
-import { classifyFreshness } from "./freshness-gate.ts";
+import { classifyFreshness } from "freshness-gate";
 
 const hourly = { name: "sync", expectedIntervalMin: 60, graceMin: 15 };
 const now = Date.parse("2026-11-13T12:00:00Z");
@@ -26,12 +26,11 @@ Most dashboards ask a process whether it's healthy and get back whatever it last
 
 ## Install
 
-Copy `src/freshness-gate.ts` into your project. It's about 70 lines in two pure functions with no dependencies, and runs under Node 22 or newer, which reads TypeScript directly.
-
 ```sh
-git clone https://github.com/justin-rhee/freshness-gate
-cp freshness-gate/src/freshness-gate.ts your-project/src/
+npm install freshness-gate
 ```
+
+Node 22 or newer. No dependencies. It ships compiled JavaScript with type definitions. Rather vendor it? Copy `src/freshness-gate.ts` into your project instead: about 70 lines, and Node 22 reads TypeScript directly.
 
 ## How it works
 
@@ -64,7 +63,7 @@ MIT. See [LICENSE](LICENSE). No warranty. Security notes and how to report a pro
 ## Related
 
 - [alert-throttle](https://github.com/justin-rhee/alert-throttle): holds back repeat alerts and says how many it held
-- [headroom](https://github.com/justin-rhee/headroom): shows Claude usage and OpenRouter spend in the macOS menu bar
+- [headroom](https://github.com/justin-rhee/headroom): shows Claude usage and API spend in the macOS menu bar
 
 Part of a small set of tools I pulled out of my own agent harness. I use them myself and read every issue. More on my [GitHub profile](https://github.com/justin-rhee).
 <!-- related:end -->

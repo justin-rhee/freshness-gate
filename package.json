@@ -1,13 +1,40 @@
 {
   "name": "freshness-gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Classifies a signal as fresh, stale, or red from its real timestamp",
   "type": "module",
-  "license": "MIT",
+  "main": "./dist/freshness-gate.js",
+  "types": "./dist/freshness-gate.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/freshness-gate.d.ts",
+      "import": "./dist/freshness-gate.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "bash tests/run.sh",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build && npm test"
+  },
   "author": "Justin Rhee",
-  "repository": { "type": "git", "url": "https://github.com/justin-rhee/freshness-gate.git" },
-  "engines": { "node": ">=22" },
-  "exports": { ".": "./src/freshness-gate.ts" },
-  "files": ["src", "README.md", "LICENSE", "SECURITY.md"],
-  "scripts": { "test": "bash tests/run.sh" }
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin-rhee/freshness-gate.git"
+  },
+  "homepage": "https://github.com/justin-rhee/freshness-gate#readme",
+  "bugs": "https://github.com/justin-rhee/freshness-gate/issues",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^22.0.0"
+  }
 }
